@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 16,
+    "title": "Accessibility and Internationalization",
+    "summary": "Guides on semantic markup, focus management, localization workflows, and handling right to left or locale specific requirements.",
+    "keywords": [
+      "a11y",
+      "i18n",
+      "localization",
+      "focus"
+    ],
+    "references": [
+      {
+        "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+        "author": "W3C",
+        "year": 2023,
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "note": "Standards for accessible web content."
+      },
+      {
+        "title": "Svelte I18n Solutions",
+        "author": "Svelte Society",
+        "year": 2022,
+        "url": "https://sveltesociety.dev/recipes/sveltekit/i18n",
+        "note": "Overview of localization libraries and workflows."
+      }
+    ],
+    "approx_word_count": 236
+  },
+  "body": [
+    "Accessibility starts with semantic HTML, descriptive labels, and predictable navigation. SvelteKit does not remove the need for ARIA attributes, but it makes focus management easier through the `afterNavigate` hook where you can restore focus to headings or skip links. Form actions should return structured errors that screen readers can announce. By keeping markup accessible from the start you reduce costly retrofits later.",
+    "Localization involves loading translation dictionaries, formatting dates and numbers, and respecting locale specific layouts. Many teams store translations in JSON files under `src/lib/i18n` and load them via layout data based on the route or user preference. Handle right to left languages by adding direction attributes and verifying layouts in mirrored mode. Testing with keyboard only navigation and screen readers ensures your localized experience remains inclusive."
+  ]
+}

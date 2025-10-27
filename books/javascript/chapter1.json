@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 1,
+    "title": "Foundations of JavaScript \u2014 From Scripts to Modules",
+    "summary": "Introduces language history, execution environments, core syntax, and module systems for modern development.",
+    "keywords": [
+      "history",
+      "runtime",
+      "modules",
+      "syntax"
+    ],
+    "references": [
+      {
+        "title": "ECMAScript\u00ae 2023 Language Specification",
+        "author": "Ecma International",
+        "year": 2023,
+        "url": "https://tc39.es/ecma262/",
+        "note": "Authoritative reference for ECMAScript language features."
+      },
+      {
+        "title": "JavaScript: The Definitive Guide (7th ed.)",
+        "author": "David Flanagan",
+        "year": 2020,
+        "url": "https://www.oreilly.com/library/view/javascript-the-definitive/9781098115555/",
+        "note": "Comprehensive coverage of language fundamentals and runtime behavior."
+      }
+    ],
+    "approx_word_count": 94
+  },
+  "body": [
+    "JavaScript began as a lightweight scripting language embedded in Netscape Navigator, yet it now powers full-fledged applications across servers, desktops, and mobile devices. This chapter traces the evolution from its Brendan Eich origins to ECMAScript standardization, exploring core syntax, execution contexts, and the shift from global scripts to modular architectures.",
+    "We examine primitive types, dynamic typing, and how interpreters manage execution contexts. Early browser quirks highlight why strict mode and linting emerged. The chapter concludes with an introduction to ESM and CommonJS modules, illustrating how bundlers and import maps bridge legacy and modern tooling."
+  ]
+}

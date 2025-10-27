@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 4,
+    "title": "Styling and Design Systems",
+    "summary": "Describes component scoped styles, global resets, theme management, and integrating utility frameworks like Tailwind with SvelteKit.",
+    "keywords": [
+      "styling",
+      "css",
+      "tailwind",
+      "design"
+    ],
+    "references": [
+      {
+        "title": "Svelte Scoped Styles",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://svelte.dev/docs/svelte-components#style",
+        "note": "Explains how component styles are scoped by default."
+      },
+      {
+        "title": "Tailwind CSS with SvelteKit",
+        "author": "Tailwind Labs",
+        "year": 2023,
+        "url": "https://tailwindcss.com/docs/guides/sveltekit",
+        "note": "Official recipe for configuring Tailwind in SvelteKit."
+      }
+    ],
+    "approx_word_count": 222
+  },
+  "body": [
+    "Svelte components scope styles automatically, compiling selectors into hashed class names so you can write plain CSS without class collisions. Global styles live in `src/app.css` or in the root layout, allowing resets and typography baselines. When building a design system, break common primitives into layout components, typography wrappers, and theme aware tokens. Because SvelteKit builds on Vite, PostCSS plugins, preprocessors, and CSS Modules can be added with minimal configuration.",
+    "Utility frameworks such as Tailwind or UnoCSS integrate cleanly and are popular for rapid prototyping. You can also use CSS variables to provide theming hooks that layouts share across the routing tree. SvelteKit's adapters can inline critical CSS during server rendering, reducing layout shifts. Whether you choose handcrafted styles or utility classes, the combination of scoped styles and framework tooling keeps CSS manageable even as the component count grows."
+  ]
+}

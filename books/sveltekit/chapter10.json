@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 10,
+    "title": "Working with Databases",
+    "summary": "Explains connecting to relational and document databases, managing migrations, and handling connection lifecycles across server executions.",
+    "keywords": [
+      "database",
+      "migrations",
+      "prisma",
+      "connections"
+    ],
+    "references": [
+      {
+        "title": "Prisma with SvelteKit",
+        "author": "Prisma Labs",
+        "year": 2023,
+        "url": "https://www.prisma.io/docs/guides/frameworks/sveltekit",
+        "note": "Step by step guide for integrating Prisma ORM."
+      },
+      {
+        "title": "PlanetScale + SvelteKit Starter",
+        "author": "PlanetScale",
+        "year": 2024,
+        "url": "https://planetscale.com/blog/sveltekit-planetscale",
+        "note": "Covers connection pooling and edge compatibility."
+      }
+    ],
+    "approx_word_count": 236
+  },
+  "body": [
+    "SvelteKit runs on the server for each request, so database connections must be managed carefully to avoid exhausting pools. ORMs like Prisma or Drizzle provide typed clients and schema migrations, but you need to instantiate them lazily or cache instances across requests. Environment variables from `.env` files become available through `$env/static/private` for build time secrets and `$env/dynamic/private` when values change at runtime. Use those modules instead of `process.env` to stay compatible with adapters that isolate environments.",
+    "During development you can run migrations through package scripts, while production deployments rely on CI or platform hooks. For edge deployments, choose providers with HTTP or REST based APIs, or rely on serverless friendly drivers. Centralize database logic into a `lib/server` directory, returning plain objects that endpoints and load functions can compose."
+  ]
+}

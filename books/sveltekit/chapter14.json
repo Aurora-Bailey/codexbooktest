@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 14,
+    "title": "Testing and Quality Assurance",
+    "summary": "Covers unit testing with Vitest, component testing with Playwright, and building confidence with contract and accessibility checks.",
+    "keywords": [
+      "testing",
+      "vitest",
+      "playwright",
+      "quality"
+    ],
+    "references": [
+      {
+        "title": "Testing SvelteKit Applications",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/testing",
+        "note": "Official guidance on unit and end to end tests."
+      },
+      {
+        "title": "Playwright Testing Guide",
+        "author": "Microsoft",
+        "year": 2024,
+        "url": "https://playwright.dev/docs/test-intro",
+        "note": "Reference for cross browser end to end testing."
+      }
+    ],
+    "approx_word_count": 234
+  },
+  "body": [
+    "Quality assurance starts with unit tests that validate stores, utilities, and server logic. Vitest integrates seamlessly with Vite projects, letting you import Svelte components and render them with testing libraries for DOM assertions. For load functions and endpoints, stub fetch calls and event objects to test authorization and data transformations. Snapshot tests can capture HTML output, but keep them focused to avoid brittle updates.",
+    "End to end testing uses Playwright or Cypress to drive a real browser against your SvelteKit app. Combine them with mocked backends or seeded databases for deterministic runs. Accessibility checks with axe-core or Playwright's accessibility assertions ensure semantic markup remains intact. Integrating these tests into CI prevents regressions and keeps confidence high as features evolve."
+  ]
+}

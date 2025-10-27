@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 18,
+    "title": "Advanced Routing Patterns",
+    "summary": "Explores route groups, optional parameters, custom trailing slash strategies, and localized routes for multilingual sites.",
+    "keywords": [
+      "advanced",
+      "routing",
+      "groups",
+      "locales"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Docs: Advanced Routing",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/routing#advanced-routing",
+        "note": "Details on route groups and matchers."
+      },
+      {
+        "title": "Localized Routing in SvelteKit",
+        "author": "John Rhea",
+        "year": 2023,
+        "url": "https://johnrhea.com/articles/sveltekit-localized-routing",
+        "note": "Techniques for building locale aware routes."
+      }
+    ],
+    "approx_word_count": 234
+  },
+  "body": [
+    "As applications grow you need more sophisticated routing control. Route groups, defined by directories wrapped in parentheses, let you organize files without affecting URLs. Optional parameters use bracket syntax like `[slug=article]` to provide defaults, while rest parameters capture deep paths for features such as catch all blogs. You can define custom matchers to validate parameters like `/[id=integer]/+page.svelte`, ensuring invalid input never reaches page code.",
+    "Trailing slash behavior influences SEO and caching; SvelteKit allows you to set a global policy in `svelte.config.js` or override it per route. For multilingual sites, nested route groups tied to locales simplify translation loading. Combined with layout compositions, these patterns keep navigation coherent even when requirements shift late in the project."
+  ]
+}

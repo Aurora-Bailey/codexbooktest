@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 6,
+    "title": "Forms and Progressive Enhancement",
+    "summary": "Introduces `+page.server` actions, form submission lifecycles, and techniques for layering client side enhancements onto server handled flows.",
+    "keywords": [
+      "forms",
+      "actions",
+      "enhance",
+      "validation"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Docs: Form Actions",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/form-actions",
+        "note": "Describes server actions, validation, and redirects."
+      },
+      {
+        "title": "Progressive Enhancement in SvelteKit",
+        "author": "Svelte Radio",
+        "year": 2022,
+        "url": "https://www.svelteradio.com/episodes/progressive-enhancement",
+        "note": "Discussion on balancing server handling with client enhancements."
+      }
+    ],
+    "approx_word_count": 238
+  },
+  "body": [
+    "SvelteKit treats HTML forms as first class citizens by pairing them with actions defined in `+page.server.js`. Submitting a form posts to the same URL, the action validates data, and the result returns success or failure states that hydrate the component through the `$page` store. This means you can build robust forms without writing fetch calls manually. Flash messages, field level errors, and file uploads flow through the same mechanism.",
+    "Progressive enhancement ensures the experience stays usable when JavaScript fails or when network conditions degrade. The `enhance` helper allows you to intercept submissions, add optimistic UI, or perform custom analytics while keeping the server implementation authoritative. Because actions run on the server, secrets remain safe, yet the client can still sprinkle interactivity democratically."
+  ]
+}

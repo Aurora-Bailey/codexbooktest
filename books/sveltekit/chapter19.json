@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 19,
+    "title": "Deployment and Infrastructure",
+    "summary": "Walks through build pipelines, environment promotion, monitoring, and secrets management across staging and production.",
+    "keywords": [
+      "deployment",
+      "ci",
+      "monitoring",
+      "secrets"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Docs: Deploy",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/adapters",
+        "note": "Overview of deployment adapters and configuration."
+      },
+      {
+        "title": "GitHub Actions for SvelteKit",
+        "author": "GitHub",
+        "year": 2023,
+        "url": "https://docs.github.com/actions",
+        "note": "Guidance for building CI pipelines with GitHub Actions."
+      }
+    ],
+    "approx_word_count": 232
+  },
+  "body": [
+    "Production ready SvelteKit projects rely on automated pipelines. Continuous integration runs tests, lints code, and builds artifacts with the chosen adapter. Environment variables differ between staging and production, so store them in platform specific secret managers rather than `.env` files checked into version control. Infrastructure as code tools like Terraform or Pulumi can provision databases, storage buckets, and edge workers alongside the app.",
+    "Monitoring closes the loop. Set up error reporting with Sentry or LogRocket, track performance metrics, and configure uptime checks. Rolling deployments and blue green strategies reduce downtime during releases. When secrets rotate, redeploy the app so adapters pick up new values."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "chapter": 4,
+    "title": "Asynchronous JavaScript \u2014 Promises, async/await, and the Event Loop",
+    "summary": "Demystifies the event loop, microtasks, Promises, async/await, and observable patterns for concurrency.",
+    "keywords": [
+      "event-loop",
+      "promises",
+      "async-await",
+      "concurrency"
+    ],
+    "references": [
+      {
+        "title": "What the heck is the event loop anyway?",
+        "author": "Philip Roberts",
+        "year": 2014,
+        "url": "https://www.youtube.com/watch?v=8aGhZQkoFbQ",
+        "note": "Classic talk explaining the event loop and asynchronous behavior."
+      }
+    ],
+    "approx_word_count": 65
+  },
+  "body": [
+    "Asynchronous programming prevents UI freezes and unlocks scalable servers. We map call stack, task queue, and microtask execution, clarifying how Promises schedule continuations. Patterns such as waterfall, parallel, and race conditions are illustrated through fetch examples.",
+    "`async/await` simplifies flow control; we discuss error handling, cancellation strategies, and integration with streams and Observables. The chapter ends with debugging guidance using DevTools timeline and async stack traces."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "chapter": 8,
+    "title": "Testing Strategies \u2014 Unit, Integration, and End-to-End",
+    "summary": "Discusses testing philosophies, frameworks, mocking, and continuous testing for JavaScript applications.",
+    "keywords": [
+      "testing",
+      "jest",
+      "cypress",
+      "automation"
+    ],
+    "references": [
+      {
+        "title": "Testing JavaScript Applications",
+        "author": "Lucas Fernandes da Costa",
+        "year": 2021,
+        "url": "https://www.manning.com/books/testing-javascript-applications",
+        "note": "Comprehensive guide to testing techniques and tools."
+      }
+    ],
+    "approx_word_count": 70
+  },
+  "body": [
+    "Effective testing balances fast unit tests with realistic integration and end-to-end coverage. We explore Jest, Vitest, and Mocha for unit suites, discuss mocking strategies, and caution against overspecification. Integration tests validate modules interacting via HTTP, databases, or message queues.",
+    "End-to-end tests using Cypress or Playwright simulate user journeys. We address flakiness mitigation, test pyramids, and how to incorporate visual regression tools. Continuous testing pipelines keep quality high during rapid iteration."
+  ]
+}

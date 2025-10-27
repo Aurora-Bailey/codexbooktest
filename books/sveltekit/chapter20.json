@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 20,
+    "title": "Architecting Real World Applications",
+    "summary": "Synthesizes advanced patterns including modular monorepos, domain driven design, scalability considerations, and long term maintenance.",
+    "keywords": [
+      "architecture",
+      "monorepo",
+      "domains",
+      "maintenance"
+    ],
+    "references": [
+      {
+        "title": "Scaling Svelte Applications",
+        "author": "Svelte Society",
+        "year": 2024,
+        "url": "https://sveltesociety.dev/recipes/sveltekit/scaling",
+        "note": "Recommendations for structuring large SvelteKit codebases."
+      },
+      {
+        "title": "Domain Driven Design Distilled",
+        "author": "Vaughn Vernon",
+        "year": 2016,
+        "url": "https://www.oreilly.com/library/view/domain-driven-design-distilled/9780134434964/",
+        "note": "Conceptual framework for modular domain design."
+      }
+    ],
+    "approx_word_count": 238
+  },
+  "body": [
+    "Large SvelteKit systems benefit from modular boundaries. Organize repositories by domains, separating `lib`, `routes`, and `server` logic into cohesive units with clear interfaces. Consider a monorepo managed by pnpm workspaces or Turborepo to share UI libraries and utilities between apps. TypeScript definitions and service contracts prevent module drift, while code generation can produce API clients from schemas automatically.",
+    "Scalability requires observability, documentation, and onboarding paths. Adopt ADRs to record architectural decisions, maintain living style guides, and schedule dependency upgrades. SvelteKit's conventions reduce boilerplate, but long term maintenance still depends on disciplined review practices and automated checks."
+  ]
+}

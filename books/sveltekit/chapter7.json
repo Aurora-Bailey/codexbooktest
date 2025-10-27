@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 7,
+    "title": "Stores and State Management",
+    "summary": "Details writable, readable, and derived stores, interoperability with load data, and strategies for cross route state without single page globals.",
+    "keywords": [
+      "stores",
+      "state",
+      "derived",
+      "context"
+    ],
+    "references": [
+      {
+        "title": "Svelte Docs: Stores",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://svelte.dev/docs/svelte-store",
+        "note": "Formal definitions of writable, readable, and derived stores."
+      },
+      {
+        "title": "Managing State in SvelteKit",
+        "author": "Matias Capeletto",
+        "year": 2023,
+        "url": "https://dev.to/mateuszzyl/state-management-in-sveltekit-4p7d",
+        "note": "How to combine stores with route data effectively."
+      }
+    ],
+    "approx_word_count": 232
+  },
+  "body": [
+    "Svelte stores provide a minimal yet powerful state layer. Writable stores let components mutably update values, readable stores expose subscribe only APIs, and derived stores compute new values based on dependencies. In SvelteKit these stores interact with the `$page` data store, which holds the resolved load output. You can place stores inside `lib` for reuse, set them in layout load functions, or inject them via context so only parts of the tree subscribe.",
+    "Avoid global singletons for transient UI state. Instead use derived stores keyed by route parameters, and leverage the `page.subscribe` helper to react to navigation changes. Server side rendered pages hydrate with their store values already populated, giving you consistent state regardless of how a user reaches a page. When state must persist between sessions, pair stores with browser storage inside guarded `onMount` blocks."
+  ]
+}

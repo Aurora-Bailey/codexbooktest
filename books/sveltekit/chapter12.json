@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 12,
+    "title": "File Uploads and Binary Data",
+    "summary": "Discusses multipart form parsing, streaming uploads, storage services, and displaying uploaded assets efficiently.",
+    "keywords": [
+      "uploads",
+      "multipart",
+      "storage",
+      "binary"
+    ],
+    "references": [
+      {
+        "title": "Handling File Uploads in SvelteKit",
+        "author": "Jacob Babik",
+        "year": 2023,
+        "url": "https://jkb.gg/sveltekit-file-uploads",
+        "note": "Explains parsing multipart forms and storing files."
+      },
+      {
+        "title": "AWS S3 Upload Strategies",
+        "author": "AWS",
+        "year": 2022,
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html",
+        "note": "Reference for pre-signed URL uploads with S3."
+      }
+    ],
+    "approx_word_count": 232
+  },
+  "body": [
+    "Handling uploads begins with a form action that receives a multipart request. The event object exposes a `request.formData()` method, allowing you to read `File` objects on the server. From there you can stream bytes to disk, push them to object storage services, or process them through libraries such as Sharp. Because serverless adapters have memory limits, streaming uploads or using signed URLs helps avoid timeouts.",
+    "After storing files, return metadata so pages can reference assets through CDN friendly URLs. For image heavy experiences consider generating responsive variants and caching headers. When downloads must be protected, gate access through endpoints that check permissions before proxying the data."
+  ]
+}

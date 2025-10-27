@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 2,
+    "title": "Routing Fundamentals",
+    "summary": "Explores file system routing, nested layouts, and how SvelteKit resolves pages, endpoints, and parameters.",
+    "keywords": [
+      "routing",
+      "layouts",
+      "parameters",
+      "pages"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Docs: Routing",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/routing",
+        "note": "Primary specification for routes, layouts, and params."
+      },
+      {
+        "title": "Understanding File Based Routing",
+        "author": "Josh Collinsworth",
+        "year": 2022,
+        "url": "https://joshcollinsworth.com/blog/intro-to-sveltekit",
+        "note": "Practical breakdown of route conventions and layout composition."
+      }
+    ],
+    "approx_word_count": 230
+  },
+  "body": [
+    "Every file under `src/routes` becomes a route, and SvelteKit interprets the directory structure to build nested layouts automatically. A `+page.svelte` file renders the page component, while a sibling `+layout.svelte` wraps child routes with shared UI and state. By convention, `+page.js` (or `.ts`) exports data loaders tied to the same URL segment. Dynamic parameters are defined by bracket syntax, so `[slug]/+page.svelte` handles `/posts/anything`. Optional parameters, rest parameters, and route groups give precise control without manual router configuration.",
+    "Layouts can stack: the root layout handles navigation chrome, a section layout can load user profile data, and the leaf page focuses on a specific experience. Understanding how data cascades through these layers is essential because a parent layout's load function runs before its children. Endpoints such as `+server.js` live next to pages and can return JSON responses or handle mutations. The routing system removes the need for client side router packages, yet remains flexible enough to model complex applications by mapping directories to user mental models."
+  ]
+}

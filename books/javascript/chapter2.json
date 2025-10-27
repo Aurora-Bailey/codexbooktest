@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "chapter": 2,
+    "title": "Control Flow, Functions, and Scope",
+    "summary": "Explores control structures, function declarations, closures, and scope chains for reliable program flow.",
+    "keywords": [
+      "functions",
+      "closures",
+      "scope",
+      "control-flow"
+    ],
+    "references": [
+      {
+        "title": "You Don\u2019t Know JS Yet: Scope & Closures",
+        "author": "Kyle Simpson",
+        "year": 2020,
+        "url": "https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed",
+        "note": "In-depth treatment of lexical scope and closures."
+      }
+    ],
+    "approx_word_count": 71
+  },
+  "body": [
+    "Control flow in JavaScript hinges on interpreting truthy and falsy values, short-circuit evaluation, and loop semantics. Functions act as both executable units and scopes. We dissect declarations versus expressions, arrow functions, default parameters, and rest arguments.",
+    "Closures receive special emphasis: by retaining references to outer scopes, they enable encapsulation patterns, event handler factories, and memoization. The chapter includes practical debugging tips for scope-related bugs and strategies for avoiding accidental global leaks."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 17,
+    "title": "Integrating Third Party Services",
+    "summary": "Covers analytics, payments, email, and searching external APIs while respecting environment specific configurations.",
+    "keywords": [
+      "integrations",
+      "analytics",
+      "payments",
+      "apis"
+    ],
+    "references": [
+      {
+        "title": "Stripe Payments with SvelteKit",
+        "author": "Stripe",
+        "year": 2023,
+        "url": "https://stripe.com/docs/payments/accept-a-payment?platform=web&ui=elements",
+        "note": "Details on accepting payments with modern web apps."
+      },
+      {
+        "title": "Using Analytics in SvelteKit",
+        "author": "Svelte School",
+        "year": 2022,
+        "url": "https://svelte.school/tutorials/sveltekit-analytics",
+        "note": "Implementation guidance for analytics providers."
+      }
+    ],
+    "approx_word_count": 230
+  },
+  "body": [
+    "Modern apps rely on external services for payments, email, search, and error tracking. SvelteKit makes integrating these services straightforward by allowing server only code in endpoints and hooks. For analytics you can lazy load scripts in the root layout to avoid blocking rendering and respect user consent preferences. Payments with providers like Stripe rely on server endpoints to create payment intents, while client components render hosted UI elements.",
+    "When calling third party APIs, centralize environment variables and service clients to avoid duplicating configuration. SvelteKit's adapters often provide request hooks where you can inject API keys or set custom headers. Logging and monitoring become critical at this stage, so integrate tools like Sentry or Logtail to capture errors across server and client contexts."
+  ]
+}

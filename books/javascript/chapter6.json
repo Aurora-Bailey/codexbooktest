@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "chapter": 6,
+    "title": "Node.js and Server-Side JavaScript",
+    "summary": "Introduces Node.js architecture, module systems, streams, and building REST APIs with modern tooling.",
+    "keywords": [
+      "nodejs",
+      "streams",
+      "rest",
+      "tooling"
+    ],
+    "references": [
+      {
+        "title": "Node.js Documentation",
+        "author": "OpenJS Foundation",
+        "year": 2024,
+        "url": "https://nodejs.org/en/docs",
+        "note": "Official docs covering APIs, process model, and best practices."
+      }
+    ],
+    "approx_word_count": 67
+  },
+  "body": [
+    "Node.js extends JavaScript to the server using libuv for asynchronous I/O. We examine the module loader, CommonJS versus ES Modules, and package management with npm and pnpm. Streams power efficient data pipelines; examples include file uploads and HTTP proxies.",
+    "Building REST APIs involves routing, middleware, and response serialization. We compare Express, Fastify, and native `http` patterns, touching on observability, clustering, and deployment with containers or serverless platforms."
+  ]
+}

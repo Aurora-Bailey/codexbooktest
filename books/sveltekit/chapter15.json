@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 15,
+    "title": "Performance Optimization",
+    "summary": "Looks at bundle analysis, lazy loading, image optimization, and profiling both server and client performance bottlenecks.",
+    "keywords": [
+      "performance",
+      "lazy",
+      "analysis",
+      "profiling"
+    ],
+    "references": [
+      {
+        "title": "Vite Performance Techniques",
+        "author": "Evan You",
+        "year": 2023,
+        "url": "https://vitejs.dev/guide/performance.html",
+        "note": "Optimization tips for Vite powered builds."
+      },
+      {
+        "title": "Image Optimization in SvelteKit",
+        "author": "Svelte Society",
+        "year": 2024,
+        "url": "https://sveltesociety.dev/recipes/sveltekit/image-optimization",
+        "note": "Strategies for responsive images and caching."
+      }
+    ],
+    "approx_word_count": 232
+  },
+  "body": [
+    "SvelteKit compiles components into small JavaScript chunks, but you should still monitor bundle size. The `@sveltejs/kit` adapter exposes build statistics, and tools like `rollup-plugin-visualizer` help you spot heavy dependencies. Use dynamic imports to lazy load admin areas or rarely visited routes, and mark expensive modules as client only when SSR adds no benefit. The router already preloads code on hover, but you can disable this for bandwidth heavy sections.",
+    "On the server, profile load functions that perform multiple sequential fetches and batch them when possible. For media heavy pages, integrate an image optimization pipeline that generates appropriate sizes and uses the `loading=\"lazy\"` attribute. Browser performance tools reveal hydration costs, enabling you to refactor components that rely on large reactive arrays or redundant stores."
+  ]
+}

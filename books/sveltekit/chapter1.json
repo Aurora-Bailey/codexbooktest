@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 1,
+    "title": "Getting Started with SvelteKit",
+    "summary": "Walks through tooling setup, project initialization, and the mental model behind the SvelteKit application shell.",
+    "keywords": [
+      "setup",
+      "tooling",
+      "project",
+      "shell"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Documentation: Getting Started",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/introduction",
+        "note": "Official walkthrough for creating a new SvelteKit project."
+      },
+      {
+        "title": "Svelte Blog: From Svelte to SvelteKit",
+        "author": "Rich Harris",
+        "year": 2021,
+        "url": "https://svelte.dev/blog/whats-new-in-svelte-2021",
+        "note": "Explains the shift from single component builds to full stack applications."
+      }
+    ],
+    "approx_word_count": 218
+  },
+  "body": [
+    "SvelteKit wraps the Svelte compiler with a routing and rendering engine so you can build full stack applications without assembling a pipeline by hand. Before writing any code you install Node, choose a package manager, and scaffold a project with `npm create svelte@latest`. The CLI walks through TypeScript support, linting, and test harness options. The result is a project that looks unfamiliar if you come from older Svelte templates: instead of a single `App.svelte` entry point you receive a file system router, a server directory, and configuration tuned for both development and production builds.",
+    "Running `npm run dev` starts a Vite powered server that handles hot module replacement and server side rendering. Pages inside the `src/routes` directory instantly become routable, and the framework injects a shared application shell so navigation feels instant. Understanding this shell is critical: layouts persist between navigations, islands of state survive route changes, and load functions orchestrate data fetching before components render. With the tooling foundation in place, you can focus on features rather than bundler minutiae."
+  ]
+}

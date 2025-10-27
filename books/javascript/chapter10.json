@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 10,
+    "title": "Performance, Optimization, and Future Directions",
+    "summary": "Covers profiling, memory management, WebAssembly, and upcoming ECMAScript proposals shaping JavaScript\u2019s future.",
+    "keywords": [
+      "performance",
+      "profiling",
+      "wasm",
+      "proposals"
+    ],
+    "references": [
+      {
+        "title": "MDN Web Docs \u2014 Performance",
+        "author": "Mozilla",
+        "year": 2024,
+        "url": "https://developer.mozilla.org/en-US/docs/Web/Performance",
+        "note": "Guidance on measuring and improving web performance."
+      },
+      {
+        "title": "TC39 Proposals",
+        "author": "ECMAScript TC39",
+        "year": 2024,
+        "url": "https://github.com/tc39/proposals",
+        "note": "Official list of current and upcoming ECMAScript features."
+      }
+    ],
+    "approx_word_count": 59
+  },
+  "body": [
+    "Optimizing JavaScript demands understanding V8 and SpiderMonkey internals, hot-path detection, and memory management. We discuss profiling with Chrome DevTools, Node\u2019s inspector, and Lighthouse, covering CPU bottlenecks, layout thrashing, and GC tuning.",
+    "The chapter introduces WebAssembly integration, workers for parallelism, and performance budgets. We close by surveying TC39 proposals\u2014Temporal, Records & Tuples, pipeline operator\u2014and their implications for future architecture decisions."
+  ]
+}

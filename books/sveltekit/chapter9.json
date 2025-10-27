@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 9,
+    "title": "Endpoints and APIs",
+    "summary": "Shows how to build REST style endpoints, handle different HTTP verbs, and consume them from both load functions and external clients.",
+    "keywords": [
+      "endpoint",
+      "api",
+      "http",
+      "server"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Docs: Endpoints",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/routing#server",
+        "note": "Covers `+server.js` endpoints and handlers."
+      },
+      {
+        "title": "Building APIs with SvelteKit",
+        "author": "Kevin Aker",
+        "year": 2022,
+        "url": "https://kevink.dev/blog/sveltekit-endpoints",
+        "note": "Practical examples of POST and PUT handlers."
+      }
+    ],
+    "approx_word_count": 228
+  },
+  "body": [
+    "Endpoints in SvelteKit live alongside pages. A `+server.js` file exports functions named after HTTP verbs such as `GET`, `POST`, or `PATCH`. These handlers receive the request event and can return JSON, redirect responses, or throw errors. Because endpoints share the route namespace, `/api/users/+server.js` results in requests being served from `/api/users`. They run on the server only, making them a safe place for database queries and third party API secrets.",
+    "You can call endpoints from load functions with the provided `fetch`, guaranteeing that cookies, credentials, and environment aware base paths are handled consistently. External clients can consume these endpoints too, letting SvelteKit act as a backend for other applications. Structuring logic into services or repositories keeps endpoint handlers thin and testable."
+  ]
+}

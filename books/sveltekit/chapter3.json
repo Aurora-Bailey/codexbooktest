@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 3,
+    "title": "Reactivity and Component Composition",
+    "summary": "Covers Svelte syntax, reactive statements, context APIs, and patterns for composing reusable UI blocks in SvelteKit projects.",
+    "keywords": [
+      "reactivity",
+      "components",
+      "context",
+      "composition"
+    ],
+    "references": [
+      {
+        "title": "Svelte Tutorial: Reactivity",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://svelte.dev/tutorial/reactive-declarations",
+        "note": "Interactive guide to Svelte's reactive declarations."
+      },
+      {
+        "title": "Context API Design Patterns in Svelte",
+        "author": "Geoff Rich",
+        "year": 2023,
+        "url": "https://geoffrich.net/posts/svelte-context-patterns/",
+        "note": "Shows how to share state across component trees cleanly."
+      }
+    ],
+    "approx_word_count": 236
+  },
+  "body": [
+    "SvelteKit uses the same component model as Svelte: single file components mixing markup, styles, and script. Reactivity is declaration based, so assigning to a variable automatically updates the DOM, and labeled statements like `$: doubled = count * 2` recompute whenever dependencies change. For derived data that spans components you export props and leverage slots, fragment let bindings, and forwarded events to build reusable building blocks. Composition patterns start simple but scale when you pair Svelte's language features with the router's layout hierarchy.",
+    "Context APIs and setContext/getContext help share instances such as i18n dictionaries or analytics clients without prop drilling. Since SvelteKit hydrates pages progressively, you also need to consider when code runs on the server versus the browser. Wrapping components with `onMount` ensures browser only APIs load at the right time. Together these tools allow UI composition that feels lightweight yet remains predictable as features grow."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 5,
+    "title": "Data Loading with +page and +layout",
+    "summary": "Examines universal load functions, server only loads, and how to manage caching, errors, and redirects during data fetching.",
+    "keywords": [
+      "data",
+      "load",
+      "fetch",
+      "errors"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Docs: Loading Data",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/load",
+        "note": "Defines universal and server load behaviors."
+      },
+      {
+        "title": "HTTP Caching Considerations in SvelteKit",
+        "author": "Svelte Society",
+        "year": 2023,
+        "url": "https://sveltesociety.dev/recipes/sveltekit/load-best-practices",
+        "note": "Guidance for caching and invalidating load results."
+      }
+    ],
+    "approx_word_count": 244
+  },
+  "body": [
+    "Load functions coordinate data fetching before a page renders. A `+page.js` load runs on both the server and client, receives the fetch helper, and returns props merged into the page component's `data` store. Heavy or private operations belong in `+page.server.js`, ensuring secrets never reach the browser. Layout loads execute first, so shared datasets like the current user or navigation entries can cascade down the route tree. Error handling is explicit: throw `error(status, message)` to render an error page, or return `redirect(status, location)` to move the user.",
+    "Caching data is as important as fetching it. The `setHeaders` helper lets you send cache control directives when data can be reused, while `depends` attaches invalidation keys so subsequent navigations know when to refetch. Understanding the interplay between universal and server side loads, along with the store that SvelteKit injects into components, ensures consistent data hydration even during fast client side transitions."
+  ]
+}

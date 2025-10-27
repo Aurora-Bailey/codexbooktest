@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 11,
+    "title": "Authentication and Sessions",
+    "summary": "Covers cookie based sessions, JWT flows, OAuth providers, and how to guard routes using hooks and layout logic.",
+    "keywords": [
+      "auth",
+      "sessions",
+      "hooks",
+      "oauth"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Docs: Hooks",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/hooks",
+        "note": "Explains request lifecycle hooks for auth."
+      },
+      {
+        "title": "Lucia Auth for SvelteKit",
+        "author": "Pilcrow",
+        "year": 2024,
+        "url": "https://lucia-auth.com/guidebook/sveltekit",
+        "note": "Modern auth library integrated with SvelteKit hooks."
+      }
+    ],
+    "approx_word_count": 234
+  },
+  "body": [
+    "Authentication often starts with a `handle` hook in `src/hooks.server`. The hook reads cookies, verifies sessions, and adds user data to the event locals object. Downstream load functions and actions can trust `locals` to determine access. SvelteKit's response helpers make it easy to set HTTP only cookies with secure flags, providing protection against script based attacks. For token based flows you can issue JWTs and store them in headers, though cookies remain convenient for browsers.",
+    "OAuth providers such as GitHub or Google can be integrated by creating endpoints that kick off the authorization code flow, then storing profile data in your database. Libraries like Lucia or Auth.js accelerate the process with prebuilt handlers. Protecting routes involves returning redirects for anonymous users or setting `prerender = false` on dynamic, user specific pages."
+  ]
+}

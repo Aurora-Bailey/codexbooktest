@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "chapter": 5,
+    "title": "DOM APIs and Browser Integration",
+    "summary": "Explains DOM manipulation, events, Web APIs, and modern best practices for client-side scripting.",
+    "keywords": [
+      "DOM",
+      "events",
+      "web-apis",
+      "browser"
+    ],
+    "references": [
+      {
+        "title": "MDN Web Docs \u2014 Document Object Model (DOM)",
+        "author": "Mozilla",
+        "year": 2024,
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model",
+        "note": "Primary reference for DOM interfaces and usage."
+      }
+    ],
+    "approx_word_count": 63
+  },
+  "body": [
+    "Client-side scripts interact with the DOM to update content, respond to input, and orchestrate media. We cover node selection, templating, and batch updates using document fragments. Event propagation, delegation, and passive listeners provide responsive yet performant UX.",
+    "Beyond the DOM, JavaScript accesses Browser APIs like Fetch, IntersectionObserver, and Web Storage. Progressive enhancement ensures functionality degrades gracefully, while security considerations address XSS and sandboxing."
+  ]
+}

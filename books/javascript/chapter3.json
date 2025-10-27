@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "chapter": 3,
+    "title": "Objects, Prototypes, and Classes",
+    "summary": "Covers object literals, property descriptors, prototype chains, and class syntax introduced in ES2015.",
+    "keywords": [
+      "objects",
+      "prototypes",
+      "classes",
+      "inheritance"
+    ],
+    "references": [
+      {
+        "title": "MDN Web Docs \u2014 Working with Objects",
+        "author": "Mozilla",
+        "year": 2024,
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects",
+        "note": "Practical overview of object operations and prototypes."
+      }
+    ],
+    "approx_word_count": 59
+  },
+  "body": [
+    "JavaScript\u2019s inheritance model is prototype-based. We explore object creation patterns, from literals and factories to constructors and `Object.create`. Property descriptors show how getters, setters, and enumerability influence behavior.",
+    "With ES2015 classes, syntactic sugar improves ergonomics while preserving prototype semantics. We examine inheritance, super calls, private fields, and mixin composition, highlighting best practices and limitations compared to traditional OOP languages."
+  ]
+}

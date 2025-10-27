@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "chapter": 9,
+    "title": "Type Systems and Static Analysis",
+    "summary": "Explains TypeScript, Flow, JSDoc, and static analysis tools enhancing reliability in large codebases.",
+    "keywords": [
+      "typescript",
+      "flow",
+      "static-analysis",
+      "jsdoc"
+    ],
+    "references": [
+      {
+        "title": "TypeScript Handbook",
+        "author": "TypeScript Team",
+        "year": 2024,
+        "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+        "note": "Official guide to TypeScript\u2019s type system and tooling."
+      }
+    ],
+    "approx_word_count": 57
+  },
+  "body": [
+    "Static analysis reduces runtime surprises. We compare TypeScript\u2019s structural typing with Flow, and demonstrate gradual typing via JSDoc annotations. Topics include generics, utility types, declaration files, and migrating legacy code.",
+    "Beyond types, tools like ESLint, SonarQube, and dependency scanners catch security and performance issues. The chapter emphasizes enforcing contracts at build time while keeping developer experience smooth."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "chapter": 7,
+    "title": "Tooling, Bundlers, and Build Pipelines",
+    "summary": "Covers package management, bundlers, transpilers, and CI practices for maintainable JavaScript projects.",
+    "keywords": [
+      "bundlers",
+      "transpilers",
+      "npm",
+      "ci"
+    ],
+    "references": [
+      {
+        "title": "Webpack Documentation",
+        "author": "Webpack Contributors",
+        "year": 2024,
+        "url": "https://webpack.js.org/concepts/",
+        "note": "Foundational bundler concepts and configuration guides."
+      }
+    ],
+    "approx_word_count": 61
+  },
+  "body": [
+    "Modern JavaScript relies on tooling to manage complexity. This chapter compares npm, Yarn, and pnpm, explores bundlers (Webpack, Vite, Rollup), and examines transpilation via Babel and SWC. Topics include tree shaking, code splitting, and source maps.",
+    "We outline linting with ESLint, formatting with Prettier, and testing frameworks integrated into CI pipelines. Sample GitHub Actions configurations demonstrate automated builds, tests, and releases."
+  ]
+}

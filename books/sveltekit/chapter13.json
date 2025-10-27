@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 13,
+    "title": "Streaming and Edge Delivery",
+    "summary": "Explains response streaming, web sockets alternatives, and deploying SvelteKit to edge runtimes for low latency experiences.",
+    "keywords": [
+      "streaming",
+      "edge",
+      "runtimes",
+      "latency"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Docs: Streaming",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/load#streaming-data",
+        "note": "Describes streaming data from load functions."
+      },
+      {
+        "title": "Real Time Apps on the Edge",
+        "author": "Cloudflare",
+        "year": 2023,
+        "url": "https://developers.cloudflare.com/workers/learning/real-time-apps/",
+        "note": "Explains patterns for delivering low latency updates."
+      }
+    ],
+    "approx_word_count": 238
+  },
+  "body": [
+    "SvelteKit can stream data from load functions by returning a `streamed` object that resolves asynchronously. This lets server rendering start immediately while slower API calls populate the UI when ready. On the server you can also create endpoints that yield `ReadableStream` responses, enabling incremental data delivery without waiting for the full payload. When you need push style updates, SvelteKit integrates well with event source streams or third party WebSocket services, even though it does not ship its own socket server.",
+    "Edge deployments on platforms like Cloudflare Workers or Vercel Edge reduce latency by executing logic close to users. These environments limit Node APIs, so you rely on Web standard APIs for fetch, crypto, and streams. SvelteKit's adapters handle most compatibility layers, but you must choose libraries that avoid native modules. When done correctly, streaming and edge delivery combine to create fluid real time interfaces with minimal delay."
+  ]
+}

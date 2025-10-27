@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "chapter": 8,
+    "title": "Rendering Strategies",
+    "summary": "Breaks down server side rendering, client side navigation, static prerendering, and hybrid delivery modes using adapters.",
+    "keywords": [
+      "ssr",
+      "csr",
+      "prerender",
+      "adapters"
+    ],
+    "references": [
+      {
+        "title": "SvelteKit Docs: Rendering",
+        "author": "Svelte Core Team",
+        "year": 2024,
+        "url": "https://kit.svelte.dev/docs/page-options#ssr-and-csr",
+        "note": "Explains SSR, CSR, and pre-render toggles."
+      },
+      {
+        "title": "Choosing the Right Adapter",
+        "author": "The Svelte Society",
+        "year": 2023,
+        "url": "https://sveltesociety.dev/recipes/sveltekit/adapters",
+        "note": "Guidance for picking deployment targets and adapters."
+      }
+    ],
+    "approx_word_count": 240
+  },
+  "body": [
+    "SvelteKit defaults to server side rendering, generating HTML on the server while hydrating components in the browser for interactivity. You can disable SSR per route with `export const ssr = false` when an experience only makes sense on the client. Static prerendering turns routes into HTML files during the build, ideal for marketing pages or documentation. The framework keeps SSR, CSR, and prerender configurable via module level exports in each route, letting you mix strategies within one application.",
+    "Deployment adapters translate the build output for platforms like Vercel, Netlify, or Cloudflare. Some adapters support edge runtimes with streaming responses, while others target Node servers with full file system access. Understanding the rendering mode helps you decide which adapter to use, which APIs are available, and how to structure server side logic."
+  ]
+}
