@@ -1,43 +1,40 @@
-<script lang="ts">
-    import type { PageData } from './$types';
-
-    export let data: PageData;
+<script>
+	export let data;
+	const { book } = data;
+	const { slug, title, chapters } = book;
 </script>
 
 <svelte:head>
-    <title>{data.book.title} · Codexarium</title>
-    <meta
-        name="description"
-        content={`Chapter summaries for ${data.book.title} available in the Codexarium reader.`}
-    />
+	<title>{title} · Codexarium</title>
+	<meta
+		name="description"
+		content={`Chapter summaries for ${title} available in the Codexarium reader.`}
+	/>
 </svelte:head>
 
 <nav class="back">
-    <a href="/">← Library</a>
+	<a href="/">← Library</a>
 </nav>
 
 <header class="hero">
-    <h1>{data.book.title}</h1>
-    <p>
-        {data.book.chapters.length} chapters · select a summary below to open the corresponding
-        manuscript page.
-    </p>
+	<h1>{title}</h1>
+	<p>{chapters.length} chapters · select a summary below to open the corresponding manuscript page.</p>
 </header>
 
 <section class="toc">
-    <ol>
-        {#each data.book.chapters as chapter}
-            <li>
-                <a href={`/book/${data.book.slug}/${chapter.slug}`}>
-                    <span class="number">{chapter.metadata.chapter}</span>
-                    <div class="summary">
-                        <h2>{chapter.metadata.title}</h2>
-                        <p>{chapter.metadata.summary}</p>
-                    </div>
-                </a>
-            </li>
-        {/each}
-    </ol>
+	<ol>
+		{#each chapters as chapter}
+			<li>
+				<a href={`/book/${slug}/${chapter.slug}`}>
+					<span class="number">{chapter.metadata.chapter}</span>
+					<div class="summary">
+						<h2>{chapter.metadata.title}</h2>
+						<p>{chapter.metadata.summary}</p>
+					</div>
+				</a>
+			</li>
+		{/each}
+	</ol>
 </section>
 
 <style>
@@ -86,10 +83,6 @@
         padding: 1.4rem 1.2rem;
         border-radius: 12px;
         text-decoration: none;
-        background: rgba(255, 252, 246, 0.95);
-        box-shadow:
-            0 8px 20px rgba(25, 16, 9, 0.1),
-            0 0 0 1px rgba(116, 96, 74, 0.08);
         transition: transform 150ms ease, box-shadow 150ms ease;
         color: inherit;
     }

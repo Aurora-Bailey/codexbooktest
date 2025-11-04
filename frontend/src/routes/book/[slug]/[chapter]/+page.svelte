@@ -1,71 +1,71 @@
-<script lang="ts">
-    import type { PageData } from './$types';
-
-    export let data: PageData;
+<script>
+	export let data;
+	const { bookSlug, bookTitle, chapter, prev, next } = data;
+	const { metadata, body } = chapter;
 </script>
 
 <svelte:head>
-    <title>{data.chapter.metadata.title} · {data.bookTitle}</title>
-    <meta name="description" content={data.chapter.metadata.summary} />
+	<title>{metadata.title} · {bookTitle}</title>
+	<meta name="description" content={metadata.summary} />
 </svelte:head>
 
 <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Library</a>
-    <span>›</span>
-    <a href={`/book/${data.bookSlug}`}>{data.bookTitle}</a>
-    <span>›</span>
-    <span aria-current="page">Chapter {data.chapter.metadata.chapter}</span>
-    </nav>
+	<a href="/">Library</a>
+	<span>›</span>
+	<a href={`/book/${bookSlug}`}>{bookTitle}</a>
+	<span>›</span>
+	<span aria-current="page">Chapter {metadata.chapter}</span>
+</nav>
 
 <header class="chapter-head">
-    <h1>{data.chapter.metadata.title}</h1>
-    <p class="summary">{data.chapter.metadata.summary}</p>
-    <p class="meta">
-        {data.chapter.metadata.approx_word_count.toLocaleString()} words · Keywords:
-        {#each data.chapter.metadata.keywords as keyword, index}
-            <span>{keyword}</span>{index < data.chapter.metadata.keywords.length - 1 ? ', ' : ''}
-        {/each}
-    </p>
+	<h1>{metadata.title}</h1>
+	<p class="summary">{metadata.summary}</p>
+	<p class="meta">
+		{metadata.approx_word_count.toLocaleString()} words · Keywords:
+		{#each metadata.keywords as keyword, index}
+			<span>{keyword}</span>{index < metadata.keywords.length - 1 ? ', ' : ''}
+		{/each}
+	</p>
 </header>
 
 <section class="chapter-body">
-    {#each data.chapter.body as paragraph, index}
-        <p class:lead={index === 0}>{paragraph}</p>
-    {/each}
+	{#each body as paragraph, index}
+		<p class:lead={index === 0}>{paragraph}</p>
+	{/each}
 </section>
 
 <section class="references">
-    <h2>Sources</h2>
-    {#if data.chapter.metadata.references.length === 0}
-        <p class="empty">No references recorded for this chapter.</p>
-    {:else}
-        <ol>
-            {#each data.chapter.metadata.references as reference}
-                <li>
-                    <strong>{reference.title}</strong> — {reference.author} ({reference.year}).
-                    <a href={reference.url} target="_blank" rel="noreferrer">{reference.url}</a>
-                    <small>{reference.note}</small>
-                </li>
-            {/each}
-        </ol>
-    {/if}
+	<h2>Sources</h2>
+	{#if metadata.references.length === 0}
+		<p class="empty">No references recorded for this chapter.</p>
+	{:else}
+		<ol>
+			{#each metadata.references as reference}
+				<li>
+					<strong>{reference.title}</strong> — {reference.author} ({reference.year}).
+					<a href={reference.url} target="_blank" rel="noreferrer">{reference.url}</a>
+					<small>{reference.note}</small>
+				</li>
+			{/each}
+		</ol>
+	{/if}
 </section>
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
-    <div>
-        {#if data.prev}
-            <a href={`/book/${data.bookSlug}/${data.prev.slug}`} class="nav-link">
-                ← Previous: {data.prev.metadata.title}
-            </a>
-        {/if}
-    </div>
-    <div>
-        {#if data.next}
-            <a href={`/book/${data.bookSlug}/${data.next.slug}`} class="nav-link">
-                Next: {data.next.metadata.title} →
-            </a>
-        {/if}
-    </div>
+	<div>
+		{#if prev}
+			<a href={`/book/${bookSlug}/${prev.slug}`} class="nav-link">
+				← Previous: {prev.metadata.title}
+			</a>
+		{/if}
+	</div>
+	<div>
+		{#if next}
+			<a href={`/book/${bookSlug}/${next.slug}`} class="nav-link">
+				Next: {next.metadata.title} →
+			</a>
+		{/if}
+	</div>
 </nav>
 
 <style>

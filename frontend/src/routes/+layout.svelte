@@ -1,8 +1,8 @@
-<script lang="ts">
+<script>
 	import favicon from '$lib/assets/favicon.svg';
 
+	const year = new Date().getFullYear();
 	let { children } = $props();
-	const currentYear = new Date().getFullYear();
 </script>
 
 <svelte:head>
@@ -28,7 +28,7 @@
 	</main>
 
 	<footer class="footer">
-		<p>&copy; {currentYear} Codexarium</p>
+		<p>&copy; {year} Codexarium</p>
 	</footer>
 </div>
 
@@ -37,7 +37,6 @@
 		margin: 0;
 		min-height: 100vh;
 		background-color: #f2e8d9;
-		background-image: url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"140\" viewBox=\"0 0 140 140\" fill=\"none\"%3E%3Cpath d=\"M0 0H140V140H0z\" fill=\"rgba(255,255,255,0.55)\"/%3E%3Cpath d=\"M0 0h140v140H0z\" stroke=\"rgba(205,183,153,0.45)\" stroke-width=\"0.6\"/%3E%3C/svg%3E');
 		color: #2a1c12;
 		font-family: 'Lora', 'Merriweather', Georgia, serif;
 		line-height: 1.7;

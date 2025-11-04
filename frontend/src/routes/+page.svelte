@@ -1,7 +1,6 @@
-<script lang="ts">
-    import type { PageData } from './$types';
-
-    export let data: PageData;
+<script>
+	export let data;
+	const { books } = data;
 </script>
 
 <svelte:head>
@@ -20,11 +19,11 @@
 	</p>
 </section>
 
-{#if data.books.length === 0}
+{#if books.length === 0}
 	<p class="empty">No books available yet.</p>
 {:else}
 	<section class="shelf" aria-label="Available books">
-		{#each data.books as book}
+		{#each books as book}
 			<a class="card" href={`/book/${book.slug}`}>
 				<header>
 					<h2>{book.title}</h2>
@@ -69,7 +68,7 @@
 	.card {
 		display: block;
 		border-radius: 12px;
-		padding: 1.6rem 1.4rem;
+		padding: 1.6rem 1.4rem 9rem 1.4rem;
 		text-decoration: none;
 		background: rgba(255, 252, 245, 0.92);
 		box-shadow:
@@ -77,15 +76,6 @@
 			0 0 0 1px rgba(120, 98, 73, 0.08);
 		transition: transform 150ms ease, box-shadow 150ms ease;
 		position: relative;
-	}
-
-	.card::after {
-		content: '';
-		position: absolute;
-		inset: 12px;
-		border-radius: 8px;
-		border: 1px solid rgba(100, 82, 60, 0.12);
-		pointer-events: none;
 	}
 
 	.card:hover,
